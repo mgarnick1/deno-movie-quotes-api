@@ -7,7 +7,7 @@ export default async ({ request, response }) => {
     return;
   }
 
-  const { quote, author, actor, movie_id } = request.body().value;
+  const { quote, author, actor, movie_id } = await request.body().value;
 
   console.log(await request.body({ type: "json" }).value);
   console.log(quote);

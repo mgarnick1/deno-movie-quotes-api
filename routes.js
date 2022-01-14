@@ -13,8 +13,8 @@ router.get("/quotes", getQuotes);
 router.get("/quotes/:id", getQuotesById);
 router.get("/movies", getAllMovies);
 router.post("/quotes/add", addQuote);
-router.post("/movies/add", addMovie);
+router.post("/movie/add", addMovie);
 router.put("/quotes/:id", updateQuote);
-router.delete("/quote/:id", deleteQuote);
+router.delete("/quotes/:id", deleteQuote);
 
 export default router;

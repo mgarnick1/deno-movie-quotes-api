@@ -29,7 +29,7 @@ class QuoteRepo {
     );
   }
   delete(id) {
-    return client.queryObject("DELETE FROM movie_quotes WHERE id = $1", id);
+    return client.queryObject("DELETE FROM movie_quotes WHERE id = $1", +id);
   }
 }
 

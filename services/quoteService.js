@@ -31,8 +31,8 @@ export const addQuote = async (quoteData) => {
     movie_id: quoteData.movie_id,
   };
 
-  await quoteRepo.add(newQuote);
-  return quoteRepo.id;
+  const quote = await quoteRepo.add(newQuote);
+  return quote.rows[0].id;
 };
 
 export const updateQuote = async (id, quoteData) => {
@@ -56,5 +56,5 @@ export const updateQuote = async (id, quoteData) => {
 };
 
 export const deleteQuote = async (id) => {
-    quoteRepo.delete(id)
-}
+  quoteRepo.delete(id);
+};

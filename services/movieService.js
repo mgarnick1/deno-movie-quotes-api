@@ -16,13 +16,11 @@ export const getMovies = async () => {
 };
 
 export const addMovie = async (movieData) => {
-    const newMovie = {
-      name: String(movieData.name),
-      year: String(movieData.year),
-    };
-  
-    await movieRepo.add(newMovie);
-    return movieRepo.id;
+  const newMovie = {
+    name: String(movieData.name),
+    year: movieData.year,
   };
 
-
+  const movieId = await movieRepo.add(newMovie);
+  return movieId.rows[0].id;
+};

@@ -1,7 +1,7 @@
 import { updateQuote } from "../services/quoteService.js";
 
 export default async ({ params, request, response }) => {
-  const quoteId = params.id;
+  const quoteId = +params.id;
 
   if (!quoteId) {
     response.status = 400;
@@ -15,7 +15,7 @@ export default async ({ params, request, response }) => {
     return;
   }
 
-  const { quote, author, actor, movie_id } = request.body().value;
+  const { quote, author, actor, movie_id } = await request.body().value;
 
   await updateQuote(quoteId, { quote, author, actor, movie_id });
 

@@ -7,7 +7,7 @@ export default async ({ request, response }) => {
     return;
   }
 
-  const { name, year } = request.body().value;
+  const { name, year } = await request.body().value;
 
   console.log(await request.body({ type: "json" }).value);
   console.log(name);
